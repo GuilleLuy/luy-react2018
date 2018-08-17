@@ -1,0 +1,131 @@
+
+// fuentes
+@font_p1:'Roboto';
+@font_p2:'Roboto Condensed','Roboto';
+
+@font_psize:14px;
+
+.roboto-thin (@fsize) { font-family:@font_p1; font-weight: 100; font-size:@fsize; }
+.roboto-light (@fsize) { font-family:@font_p1; font-weight: 300; font-size:@fsize; }
+.roboto-regular (@fsize) { font-family:@font_p1; font-weight: 400; font-size:@fsize; }
+.roboto-medium (@fsize) { font-family:@font_p1; font-weight: 500; font-size:@fsize; }
+.roboto-bold (@fsize) { font-family:@font_p1; font-weight: 600; font-size:@fsize; }
+.roboto-black (@fsize) { font-family:@font_p1; font-weight: 900;  font-size:@fsize; }
+
+.roboto_cnd-light (@fsize) { font-family:@font_p2; font-weight: 300; font-size:@fsize; }
+.roboto_cnd-regular (@fsize) { font-family:@font_p2; font-weight: 400; font-size:@fsize; }
+.roboto_cnd-bold (@fsize) { font-family:@font_p2; font-weight: 700; font-size:@fsize; }
+
+
+@main_color:#345;
+@border_color:@main_color + #333;
+@link_color:@main_color + #345;
+
+
+
+
+
+
+#presupuesto  { background:@main_color + #AAA; max-width: 100%; overflow-x: hidden; overflow-y: scroll; margin-bottom: 10vh;
+
+  .none { display: none; }
+
+
+
+  header { background:@main_color + #AAA; }
+
+
+  article.texto { float: none; margin: 0 auto; 
+
+    img { width: 100%; height: auto; }
+
+    h1 { .roboto-light(@font_psize + 10); margin: 0;
+      strong { .roboto-bold(@font_psize + 11); }
+    }  
+    h2 { .roboto-light(@font_psize + 8); margin: 20px 0 10px 0; text-transform: uppercase;  }
+    h3 { .roboto-bold(@font_psize + 4); margin: 20px 0 10px 0; text-transform: uppercase; color:blue;
+      strong { .roboto-bold(@font_psize + 6); color:mix(green, blue); }
+    } 
+
+    h4 { .roboto-bold(@font_psize + 3); margin: 10px 0 10px 0; color:fadeout(blue, 40%);
+      strong { .roboto-bold(@font_psize + 5); color:mix(green, blue); }
+    } 
+    
+
+    a { .roboto-bold(@font_psize); color:@link_color;  }
+    p { .roboto-regular(@font_psize); color:@main_color; margin:10px 0 0 0; text-indent: 20px;
+      strong { .roboto-bold(@font_psize + 1); }
+      em { .roboto-medium(@font_psize); }
+      small,
+      span { .roboto-medium(@font_psize); 
+        &.menos-dest { color:@main_color + #333 }
+        &.mas-dest { color:@main_color + #F00; .roboto-bold(@font_psize + 1); }
+        &.tiempo { color:@main_color + #00F; .roboto-bold(@font_psize + 1); }
+        &.precio { color:@main_color + #F0F; .roboto-bold(@font_psize + 1);
+          &.precio-no { text-decoration: line-through;}
+        }
+      }
+      
+      small { .roboto-bold(@font_psize + 1px) !important; text-transform: uppercase; filter:hue-rotate(150deg); }
+
+      &.n { text-indent:0; margin-bottom: 10px; border-bottom: 1px solid @border_color + #333; padding: 3vh 0; 
+        &:last-child { border:none !important; }
+        &:before {  font-size: 25px; line-height: 1em; padding-top: 5px; height:25px; width:50px; text-align: center; float: left;  }
+          &.n1 { &:before { content:'1'; } }
+          &.n2 { &:before { content:'2'; } }
+          &.n3 { &:before { content:'3'; } }
+          &.n4 { &:before { content:'4'; } }
+          &.n5 { &:before { content:'5'; } }
+        }
+      }
+    } // p
+
+    div.planes {
+      p {
+        &.n { text-indent:0; margin-bottom:2px; border-bottom:none; padding:.5vh 0; 
+       //   &:last-child { border:none !important; }
+          &:before {  font-size: 18px; font-weight: 900; padding-top: 2px; height:15px; width:33px; }
+        }
+      }
+    }
+
+    div.precios { margin: 10px 0; background: #FFF; padding:1vh 1vw;
+      p { margin:0; text-indent: 0; }
+    }
+
+
+
+    @media @min_900 {
+      header div.in,
+      .texto { width: 60vw; border-left:2px solid @border_color; padding:0 3vw; }
+      
+      header div.in { padding-top:1vh;  
+        h1 { 
+          span { position: absolute; margin: 0; left:-15vw; }
+        }
+      }
+      .texto { padding-top: 20px; 
+        h2 {  border-top:2px solid @border_color + #666; margin-left:-3vw; text-indent: 3vw; padding:2vh 1vw 1vh; float: left; width: 100vw; }
+      }
+    }
+
+    @media @min_1300 {
+      header div.in,
+      .texto { width: 50vw; }
+    }
+    @media @min_1600 {
+      header div.in,
+      .texto { width: 38vw; }
+    }
+
+
+    @media @max_900 { 
+      .texto { width: 85vw; 
+        h1, h2 { padding: 2vh 0; text-align: center;  }
+      }
+    }
+
+
+
+
+ }

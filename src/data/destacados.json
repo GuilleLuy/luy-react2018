@@ -1,0 +1,100 @@
+{
+  "destacados" : [
+    {
+      "id": "0",
+      "cliente": "Carteles Gigantografías Banners",
+      "fecha": "2008-09-24",
+      "cats": "Diseño, Impresos, 3d, Banners, Gigantografías",
+      "desc": "Gigantografía Club Atlético Colón de Santa Fe, Cartel loteo San Javier, Publicidad (lona) en estadio para Pronto Express, Banner Santa Rock Fe",
+      "img_name": "carteles"
+    },
+    {
+      "id": "1",
+      "cliente": "Xava Boards",
+      "fecha": "2011-10-24",
+      "cats": "3d, Impresos, Modelado, Diseño",
+      "desc": "Diseño de estampados para tablas de kyte surf.",
+      "img_name": "xava-boards"
+    },
+    {
+      "id": "2",
+      "cliente": "Bodyski",
+      "fecha": "2011-10-24",
+      "cats": "Modelado, 3d, Render",
+      "desc": "Modelado en 3d de prototipo a tamaño real, realizado con 3d studio max + Vray.",
+      "img_name": "bodyski"
+    },
+    {
+      "id": "3",
+      "cliente": "C&D Schaffer",
+      "fecha": "2007-10-22",
+      "cats": "Marca, Folletos, Banners, Impresos",
+      "desc": "Diseño de fusión de marcas: C&D y Schaffer, consultoras generales. Folletería, banners, etc.",
+      "img_name": "cyd-schaffer"
+    },
+    {
+      "id": "4",
+      "cliente": "Folletos",
+      "fecha": "0000-00-00",
+      "cats": "Flyers, Catálogos, Folletos, Impresos",
+      "desc": "Folletos varios, empresas y bandas de música de la ciudad de Santa Fe. Hairssime, Funkestein, Pronto Express, Canapina, Gato Enjaulado, Candioti Reggae, Funk-man y Chocolates Zukito.",
+      "img_name": "folletos"
+    },
+    {
+      "id": "5",
+      "cliente": "Marcas",
+      "fecha": "2007-07-01",
+      "cats": "Logos, Marcas, Identidad",
+      "desc": "Diseño de marcas: La Higuera de Bartolo, Canapina, Pronto Express, Masafe, Vialfe, Asiestados de Radio, Náutica El Tío, Fútbol de mesa, Puntos suspensivos, Xaymaca, Carla XX, C&D Schaffer, Cabañas La Tranquila, infussion, breakanu, sysalive.",
+      "img_name": "marcas"
+    },
+    {
+      "id": "6",
+      "cliente": "MInfraestructura",
+      "fecha": "2016-12-31",
+      "cats": "Desarrollo Web, SEO, Diseño Web, Catálogo online",
+      "desc": "Diseño y desarrollo de catálogo virtual para solicitar presupuestos, MInfraestructura, Materiales y Servicios para Redes de Agua, Gas, Cloaca y otros servicios. <a href=\"http://www.minfraestructura.com.ar\">Ver online</a>.",
+      "img_name": "minfraestructura"
+    },
+    {
+      "id": "7",
+      "cliente": "Canapina",
+      "fecha": "2009-08-07",
+      "cats": "Folletos, Marca, Redes sociales",
+      "desc": "Diseño de logotipo, tarjetas personales, folletos, redes sociales, imágenes y videos para Instagram y Facebook.",
+      "img_name": "canapina"
+    },
+    {
+      "id": "8",
+      "cliente": "Coche v5.0",
+      "fecha": "2009-08-31",
+      "cats": "3d, Modelado",
+      "desc": "Diseño de automóvil en 3d Studio Max.",
+      "img_name": "auto-v5"
+    },
+    {
+      "id": "9",
+      "cliente": "Pronto Express",
+      "fecha": "2017-04-20",
+      "cats": "Marca, Folletos/Flyers, Redes sociales, Spots en tv, Impresos",
+      "desc": "Marca, folletos, lona para estadio, panel en local, gigantografía, y flyers impresos y para redes sociales, videos institucionales y publicidades para Televsión y redes sociales.",
+      "img_name": "pronto-express"
+    },
+    {
+      "id": "10",
+      "cliente": "Bounous",
+      "fecha": "2014-11-11",
+      "cats": "Manual, Editorial, Diseño Web, SEO, Desarrollo Web, Impresos",
+      "desc": "Manual de uso y mantenimiento para volquete Bounous VB 1000 HIDRO <a href=\"/pdf/VB-100-HIDRO-HVP.pdf\">Ver online</a>\\nDiseño y desarrollo web de sitio web de Bounous Maquinarias S.A. <a href=\"http://www.bounousmaquinarias.com\">Ver online</a>",
+      "img_name": "bounous"
+    },
+    {
+      "id": "11",
+      "cliente": "Vialfe",
+      "fecha": "2009-08-04",
+      "cats": "Impresos, Marca, Diseño Web, Redes sociales",
+      "desc": "Marca, tarjetas personales, redes sociales, Carteles y banners para feria Agroactiva 2017. Diseño de web responsiva, desarrollo front-end. Vialfe, venta y alquiler de maquinaria vial.",
+      "img_name": "vialfe"
+    }
+  ]
+}
