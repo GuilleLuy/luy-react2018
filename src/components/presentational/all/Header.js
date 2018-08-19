@@ -12,7 +12,7 @@ class Header extends Component {
 
   constructor(props) { 
     super(props); 
-
+      
       global.header = React.createRef();
       global.punto = React.createRef();
       global.h1_ref = React.createRef();
@@ -94,7 +94,7 @@ class Header extends Component {
           <ul id="menu_principal">
             {items && items.map ((item,key) => 
             <li id={"btn_"+item.clase} className={item.clase} key={key} onClick={(e) => this.empiezaScroll(e)}>
-              <Link to={'/'+item.url}>{item.title}</Link>
+              <Link id={'link_'+item.clase} to={'/'+item.url}>{item.title}</Link>
             </li>)}
           </ul>
         </nav>

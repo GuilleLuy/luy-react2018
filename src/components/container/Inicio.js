@@ -28,83 +28,55 @@ class Inicio extends Component {
    };
     
     componentDidMount() { 
-
         window.scrollTo(0, 0);
         btn_cel.classList.remove('apareciendo');
-        // var sdsxt = document.createElement('a').id = 'sds';
-        // var bdsdscel = document.createElement('a').id = 'bdsdsl';
-      
-        // LAS VARIABLES QUE AL PARECER VAN CON EL ID SOLAMENTE:
-    //    global.close_menu = document.getElementById('close_menu');  
-    //    global.to_next = document.getElementById('to_next');
-    //    global.to_before = document.getElementById('to_before');
-    //    global.footer_nav = document.getElementById("footer_nav");
-
-    // LOS APENDEOS QUE NO ANDAN:
-        // footer_nav.insertBefore(to_next, footer_nav.firstChild); 
-        // footer_nav.insertBefore(close_menu, footer_nav.firstChild);
-        // footer_nav.appendChild(to_before);
-        // footer_nav.appendChild(open_menu);
-        // footer_nav.appendChild(btn_cel);
-        // to_next.setAttribute('title', ir_siguiente);
-        // to_next.setAttribute('onClick', 'clickFlechas()');
-
-        //to_before.classList.add('hide');
-
-    
-    // Orden:
-
         window.addEventListener('scroll', this.scrollBottom);
+        btn_clientes.classList.remove('prescroll');
         btn_clientes.classList.replace('quieto','scroll');
         btn_servicios.classList.replace('quieto','rotate');
-        // es ref porque usa el current
         punto.current.classList.remove('quieto','hide');
 
-        menu_principal.appendChild(btn_clientes);
 
+        // var parent= document.getElementById('menu_principal');
+        // var child=parent.querySelectorAll('a');
+        // var aClientes = child[0];
+        // aClientes.id='to_home2';
+        // aClientes.classList.add('apareciendo');
+        // footer_nav.appendChild(aClientes);
+
+        // btn_clientes.appendChild('to_home2');
+
+        // menu_principal.appendChild(btn_clientes);
+
+        menu_principal.appendChild(link_clientes);
 
         to_home.setAttribute('href','#header');
-
-        
-    //document.getElementById('btn_clientes').classList.remove('quieto');
-
-
-        // window.history.pushState({}, document.title, "/" + "");
- 
-
+        to_before.classList.remove('apareciendo');
     };
+
+    componentWillUnmount() {
+    }
 
     componentWillUnmount(i) { 
         window.removeEventListener('scroll', this.scrollBottom);
-        this.setState({
-            puntoClick: false // para invertir siempre: !this.state.puntoClick. Lo dejo en false para que al volver muestre todo
-        });
 
-        punto.current.classList.remove('nar')
-        punto.current.classList.add('neg')
+        this.setState({
+            puntoClick: !this.state.puntoClick
+        });
+        punto.current.classList.replace('nar','neg')
     };
 
-
-
-    scrollBottom(event) {
+    scrollBottom() {
         if (window.scrollY > 140) { 
             btn_servicios.classList.add('quieto')
-            btn_clientes.classList.add('quieto');
-            btn_clientes.classList.remove('scroll');
-
+            btn_clientes.classList.replace('scroll','quieto');
             punto.current.classList.add('quieto');
-
-            // var content = document.createElement("<YOUR_CONTENT>");
-            // $('<nav id="sidebar"></nav>').appendTo('#footer');
-            // $('<a class="close_nav" id="close_sidebar"></a>').appendTo($sidebar);
-
         } else {            
             btn_servicios.classList.remove('quieto');
-            btn_clientes.classList.remove('quieto');
-            btn_clientes.classList.add('scroll');
+            btn_clientes.classList.replace('quieto','scroll');
             punto.current.classList.remove('quieto');
         }
-        
+
         if (window.scrollY > 250) {   
             btn_servicios.classList.remove('rotate');
         } else {
@@ -112,70 +84,52 @@ class Inicio extends Component {
         }
     };
 
-
     onHoverArticle(i) {
+        to_next.classList.add('apareciendo');
+        to_before.classList.add('hideado');
+        to_home.classList.add('apareciendo');
 
         var actual = i;
         var last = this.state.destacados.length;
+        var lastBef = last - 1;
         var lastWork = '#'+ last;
-
-        var sig = i + 1;
-        var ant = i - 1;
-
+        var sig = i - 1;
+        var ant = i + 1;
         var siguiente = "#"+sig;
         var anterior =  "#"+ ant;
-
         to_next.setAttribute("href", siguiente);
         to_before.setAttribute("href", anterior);
-       
-        // opaciteable
-       // to_next.addEventListener("onClick", '{() => this.clickFlechas()}');
-    //         to_next.setAttribute('onClick', 'clickFlechas(e)');
-               
-     //   footer.classList.remove('hideado');
-        to_before.classList.add('hideado');
-        to_next.classList.add('apareciendo');
-        to_home.classList.add('apareciendo');
+
+        var article = document.getElementById(i);
+        article.classList.add('visible');
         
-
-        document.getElementsByTagName('h2')[i].classList.add('opacity1');
-
-          if (i != 0) {
-            document.getElementsByTagName('h2')[ant].classList.remove('opacity1');
-          }
-          if ( i != last) {
-            document.getElementsByTagName('h2')[sig].classList.remove('opacity1');
-          } 
-
         var to_beforeAt = to_before.getAttribute('href');
         var to_nextAt = to_next.getAttribute('href');
 
-            if ( to_beforeAt === '#-1' ) {
-                to_before.classList.add('hideado');
-                to_before.classList.remove('apareciendo');
+            if ( to_beforeAt === lastWork ) {
+                to_before.classList.replace('apareciendo','hideado');
             } else {
-                to_before.classList.remove('hideado');
-                to_before.classList.add('apareciendo');
+                to_before.classList.replace('hideado','apareciendo');
             }
-            if ( to_nextAt === lastWork) {
-                to_next.classList.add('hideado');
-                to_next.classList.remove('apareciendo');
+            if ( to_nextAt === '#-1') {
+                to_next.classList.replace('apareciendo','hideado');
             } else {
-                to_next.classList.remove('hideado');
-                to_next.classList.add('apareciendo');
+                to_next.classList.replace('hideado','apareciendo');
             }
-        
+          
         window.history.pushState({}, document.title, "/" + "");
-        
     }
-
 
     onMoveArticle (i) {
         footer_nav.classList.remove('hideado');
     }
 
+    onMouseOutArticle (i) {
+        var article = document.getElementById(i);
+        article.classList.remove('visible');
+        footer_nav.classList.remove('hideado');
 
-
+    }
 
 
     render() {
@@ -188,7 +142,7 @@ class Inicio extends Component {
         const dests = this.state.destacados.map((dest, i) => { // this.state.destacados.reverse().map
         var categorias = dest.cats.replace(/[,]+/g, '</strong><strong>');
             return (
-                <article onMouseMove={() => this.onMoveArticle(i)}  onMouseOver={() => this.onHoverArticle(i)} className={dest.cliente.replace(/[. ]+/g, '-').toLowerCase()} key={i} id={i}>
+                <article onMouseMove={() => this.onMoveArticle(i)} onMouseOver={() => this.onHoverArticle(i)} onMouseOut={() => this.onMouseOutArticle(i)} className={dest.cliente.replace(/[. ]+/g, '-').toLowerCase()} key={i} id={i}>
                     <h2>
                         <span>{dest.cliente}</span>
                         <strong dangerouslySetInnerHTML={{__html: categorias }} />
@@ -213,7 +167,7 @@ class Inicio extends Component {
         return (
             <div className="Inicio">
               <section id="works">
-                {dests}
+                {dests.reverse()}
               </section>
             </div>
         );

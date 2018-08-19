@@ -135,6 +135,12 @@ body * { font-family:@font_1; text-decoration:none;
 }
 
 // anim
+.tiempo_01 () {
+  @duration:.1s;
+  animation-duration:@duration; -webkit-animation-duration:@duration; -moz-animation-duration:@duration; -ms-animation-duration:@duration; -o-animation-duration:@duration;
+  transition-duration:@duration; -webkit-transition-duration:@duration; -moz-transition-duration:@duration; 
+}
+
 .tiempo_05 () {
   @duration:.3s;
   animation-duration:@duration; -webkit-animation-duration:@duration; -moz-animation-duration:@duration; -ms-animation-duration:@duration; -o-animation-duration:@duration;

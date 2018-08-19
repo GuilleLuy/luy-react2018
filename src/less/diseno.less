@@ -12,8 +12,8 @@
 .over_show { overflow-y: visible !important;  }
 .opacity1 { opacity: 1 !important;}
 
-&.apareciendo { display: inline !important; } 
-&.hideado { display: inline;  opacity: .5; pointer-events: none;    }
+&.apareciendo { display: inline !important;  } 
+&.hideado { display: inline;  opacity: .5; pointer-events: none; }
 
 @keyframes Logo1 { 
   0% { transform:rotate(0deg); } 
@@ -53,11 +53,14 @@
 // }
 
 
+.toP0 { margin-top: 0vh; }
+.toP-20 { margin-top: -20vh; }
+.toP-30 { margin-top: -30vh; }
+.toP-40 { margin-top: -40vh; }
+.toP-50 { margin-top: -50vh; }
+.toP-60 { margin-top: -60vh; }
 
-
-.servs-anim {
-  animation: opacida2 infinite 10s linear; 
-}
+.servs-anim { animation: opacida2 infinite 10s linear;  }
 
 
 
@@ -68,7 +71,7 @@
 @-webkit-keyframes scale_in { .keyf-scale_in; }
 @keyframes scale_in { .keyf-scale_in; }
 .scale_ina () { animation-name:scale_in; -webkit-animation-name:scale_in;  }
-.scale_in {   .tiempo_05; .scale_ina; }
+.scale_in {   .tiempo_01; .scale_ina; }
 
 
 .keyf-scale_out () {
@@ -78,7 +81,7 @@
 @-webkit-keyframes scale_out { .keyf-scale_out; }
 @keyframes scale_out { .keyf-scale_out; }
 .scale_outa () { animation-name:scale_out; -webkit-animation-name:scale_out;  }
-.scale_out {   .tiempo_05; .scale_outa; }
+.scale_out {   .tiempo_01; .scale_outa; }
 
 
 
@@ -104,7 +107,8 @@ body { background:@blanco;
 
           &#to_before { background: url('@{img}to_before.svg') no-repeat center bottom / 100% auto; } 
           &#to_next { background: url('@{img}to_bottom.svg') no-repeat center bottom / 100% auto; }
-          &#to_home { background: url('@{img}to_top.svg') no-repeat center bottom / 100% auto; }
+          &#link_clientes,
+          &#to_home { background: url('@{img}to_top.svg') no-repeat center bottom / 100% auto; float: left; }
 
           &#open_menu { .fn-botones_abajo_der; bottom:30px; position:fixed; z-index: 10;
                 background:url('@{img}menu.svg') no-repeat center bottom / 100% 100%; border:3px solid @blanco; border-radius: 0; transform:rotate(180deg); width:40px; height:40px; //  position: fixed; float: none; 
@@ -150,7 +154,8 @@ body { background:@blanco;
           a { width:35px; height:35px; 
             &#to_before { left:70px; }
             &#to_next { left:115px; }
-            &#to_home { left: 160px; }
+            &#to_home,
+            &#link_clientes { left: 160px; }
 
             &#open_text { font-size: 1.2em; padding-top:.15em;   }
 
@@ -163,7 +168,7 @@ body { background:@blanco;
           min-width: 265px;
           a:not(#close_menu) { width: 40px; height: 40px; }
           a.open_text { font-size: 1.2em; }
-          a#open_menu {  }  //  right:2vw; 
+        //  a#open_menu {  }  //  right:2vw; 
         }
 
         &.hided {
@@ -261,7 +266,7 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
 
   header#header { position:relative; top:0; left:0; width: 100%;  height: 100vh; z-index: 4; background:@negro; 
     p#punto_inicio {  border-radius: 100%; position: fixed; z-index: 10; width: 50px; height: 50px; top:28vh; left: 23.8vw; animation: Logo1 infinite 10s linear; 
-      span { display: none; }
+      span { display: none;  animation: Logo1 infinite 1s linear; }
       &.nar { background: @naranja url('@{img}logo-luy-negro.svg') no-repeat center center / 70% 70%; 
          cursor: pointer;
     }
@@ -445,6 +450,10 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
       // &.bodyski { background:url('@{img_trab}clientes/ss/bodyski.jpg'); }
       // &.xava-boards { background:url('@{img_trab}clientes/ss/xava-boards.jpg'); }
       // &.carteles { background:url('@{img_trab}clientes/ss/carteles.jpg'); }
+
+      &.visible { 
+         h2 { opacity: .9;}
+      }
 
     } // article
   } // section#works
@@ -645,9 +654,9 @@ nav#menu { width: 0; height: 0; overflow: hidden;  // width: 100%; height: 100vh
       // }
 
 
-     &.clientes.quieto.prescroll { 
-      a { color:@naranja !important; margin-top:2vh } 
-    }
+    //  &.clientes.quieto.prescroll { 
+    //   a { color:@naranja !important; margin-top:2vh } 
+    // }
      &.quieto { 
        a { font-size:0; }
      }
@@ -713,9 +722,9 @@ body#body_home {  scroll-behavior: smooth;
       }
       a:after { color:fadeout(@blanco,50%); position: absolute; top:0; left:0; width: 100%; height: 100%; content:'pirili pam pum pam';  font-size: 0px; background: @negro url('@{img}logo-luy-naranja.svg') no-repeat center center / 60% 60% !important; border-radius: 100%; animation: opacida infinite 1s linear;  }
       
-      a.es:after {
-        // aca debe ir:  content:'servicios';
-      }
+      // a.es:after {
+      //   // aca debe ir:  content:'servicios';
+      // }
     }
 
     &.servicios.quieto {  .fn-botones_abajo_der; bottom:20px; z-index: 10;  //animation: Logo2 infinite 8s linear;
@@ -749,13 +758,15 @@ body#body_home {  scroll-behavior: smooth;
 }  // body#body_home
 
 body#body_servs { scroll-behavior: smooth;
-  nav#menu ul li {
+  nav#menu ul li { display: none;
    // &.servicios { display: none; }
-    &.clientes.quieto { top:12px; left:15px; 
-      a { display: block; color:@negro; font-weight: bold; font-size:1.5em; z-index: 10;
-        &:before { content:"< "; font-size:1em; color:fadeout(@negro,40%); }
-      }
-    }
+
+  //  &.clientes.scroll,
+  //   &.clientes.quieto { top:12px; left:15px; 
+  //     a { display: block; color:@negro; font-weight: bold; font-size:1.5em; z-index: 10;
+  //       &:before { content:"< "; font-size:1em; color:fadeout(@negro,40%); }
+  //     }
+  //   }
     // &.clientes.scroll { top:inherit; bottom:20px; 
     //   span { display: none; }
     // }
@@ -768,8 +779,8 @@ body#body_servs { scroll-behavior: smooth;
 
     // }
 
-    &.clientes.scroll,
-    &.servicios.rotate { display: none; }
+    
+    //&.servicios.rotate { display: none; }
 
   } //   nav#menu ul li
 
@@ -778,16 +789,13 @@ body#body_servs { scroll-behavior: smooth;
     nav#footer_nav { list-style:none;
       a {
         &#close_menu,
-        &#to_next,
+    //    &#to_next,
         &#to_before,
         &#to_home,
         &#open_menu { display: none; }
-      }
-      li { 
-        &#btn_clientes {
-          a { background: url('@{img}to_top.svg') no-repeat center bottom / 100% auto; font-size:0;  display: inline !important; }
-        }
-      }
+      
+        &#link_clientes { font-size:0;  display: inline !important; }
+      }    
     }
   }
 

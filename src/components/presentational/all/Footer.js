@@ -11,24 +11,26 @@ class Footer extends Component {
   }
 
     // FOOTER 
+
+
+        // FALTA EL MENU DE ARRIBA! mails, idiomas, skype, messenger. Ver si redirigen a welcome y servicios o si haay otro modo mejor
+        
+        // ver que mas hacer aca y una vez listo ver que mas queda: page404, mails, idiomas, skype, messenger y listo todo.
+
+
+
         
     // todos estos iconitos "to_" deberian tener position absolute y estar apartados de los que "vienen" que siempre deben flotar  a la derecha.
         // ver primero el responsivo como responde a cada resolucion e imitar eso en cada una pero teniendo en cuenta siempre que el home quede bien centrado en el texto de servicios.
 
-        // el boton de celular va en servicios, alineado con las redes y con icono de whatsapp.
+        // el boton de celular en servicios VA EN REDES, no en FOOtER, es icono de whatsapp, tamaño igual a redes alineado todo. 
 
-        // lo mismo en lugar de hide que queden con menos opacidad y sin pointer events
-
-        // cuawndo se clickea alguna flechita al ir luego a servicios no va al top de todo
+        // cuawndo se scrolea mucho en inicio al ir luego a servicios no va al top de todo
 
         // los textos tienen que tener un cerrar, se tienen que crear los iconitos y tener un cerrar y todos estos cerrar mas el del menu tienen que funcionar como en el jquery...
         // ...pasando una funcion que oculte en lugar de appendear como está ahora.
 
         // Ver alguna funcion de javascript que haga lo mismo que el one 
-
-        // FALTA EL MENU DE ARRIBA! mails, idiomas, skype, messenger. Ver si redirigen a welcome y servicios o si haay otro modo mejor
-        
-        // ver que mas hacer aca y una vez listo ver que mas queda: page404, mails, idiomas, skype, messenger y listo todo.
 
         // ir comprobando con version luy_new que parece andar mejor que la online.
 
@@ -46,30 +48,6 @@ class Footer extends Component {
       //     }
       //     dom.addEventListener(event, handler); 
       // }
-
-  componentDidMount() {
-
-  }
-
-
-  //  ActionLink() {
-  //   function handleClick(e) {
-  //     e.preventDefault();
-  //     console.log('The link was clicked.');
-  //   }
-  // }
-  
-  
-// LinkFlechas(e) {
-//   e.preventDefault;
-//   function clickFlechas() {
-//     var eli = this.getAttribute('href');
-//     console.log(eli)
-//   }
-//   window.history.pushState({}, document.title, "/" + "");
-//   footer.classList.add('hideado');
-// } 
-
 
   overFheclas() {
    // footer.classList.remove('hideado');
