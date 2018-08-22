@@ -5,8 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const express = require('express');
 const app = express();
 
-
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('style.[hash].css');
 
 // API:
 // import trabajosApi from "/src/components/api/trabajos"
@@ -17,24 +17,26 @@ const app = express();
 app.use(express.static(path.join(__dirname,'/src/index.html')));
 
 module.exports = {
+  plugins: [extractCSS],
+  module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: extractCSS.extract(['css-loader', 'postcss-loader']),
+        }
+      ]
+  
+  },
 
-  // node: {
-  //   console: false,
-  //   fs: 'empty',
-  //   net: 'empty',
-  //   tls: 'empty'
-  // },
-
-    entry: './src/index.js',
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'main.js',
-      publicPath: ''
-    },
-    module: {
-      
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    publicPath: ''
+  },
 
 
+  module: {
     rules: [
       {
         test: /\.js$/,
@@ -76,6 +78,11 @@ module.exports = {
   },
 
   plugins: [
+
+
+
+
+    
     new HtmlWebPackPlugin({
       template: "./src/index.html"
     })

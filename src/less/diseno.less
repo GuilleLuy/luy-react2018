@@ -5,6 +5,7 @@
 //   }
 // }
 
+button { z-index: 200; position:fixed; min-width: 100px; min-height: 100px; left:200px; bottom: 20px; }
 
 .hide { display: none !important; }
 .show { display: block !important; }
@@ -59,6 +60,9 @@
 .toP-40 { margin-top: -40vh; }
 .toP-50 { margin-top: -50vh; }
 .toP-60 { margin-top: -60vh; }
+.toP-70 { margin-top: -70vh; }
+.toP-80 { margin-top: -80vh; }
+.toP-90 { margin-top: -90vh; }
 
 .servs-anim { animation: opacida2 infinite 10s linear;  }
 
@@ -98,17 +102,20 @@ body { background:@blanco;
 
   footer#footer {  width: 100vw;  position: fixed; z-index:3; bottom:30px; left:80px; //height: 8vh;
     nav {
-      &#footer_nav {  position: fixed; bottom:30px; left:55vw;
+      &#footer_nav {  position: fixed; bottom:30px; right:20vw; // left:55vw;
         a { float: right; margin-left: 10px; clear: none; width: 51px; height: 51px; border-radius: 100%;  border: 2px solid @naranja; border-top-color: @blanco;  border-bottom-color: @negro; 
            // .fade_in_left;
 
-          display:none;
+           display:none;
 
+         
 
-          &#to_before { background: url('@{img}to_before.svg') no-repeat center bottom / 100% auto; } 
-          &#to_next { background: url('@{img}to_bottom.svg') no-repeat center bottom / 100% auto; }
+          &#to_top,
+          &#to_before { background: url('@{img}to_before.svg') no-repeat center bottom / 100% auto;} 
+          &#to_next { background: url('@{img}to_bottom.svg') no-repeat center bottom / 100% auto; float: left;  }
           &#link_clientes,
           &#to_home { background: url('@{img}to_top.svg') no-repeat center bottom / 100% auto; float: left; }
+          
 
           &#open_menu { .fn-botones_abajo_der; bottom:30px; position:fixed; z-index: 10;
                 background:url('@{img}menu.svg') no-repeat center bottom / 100% 100%; border:3px solid @blanco; border-radius: 0; transform:rotate(180deg); width:40px; height:40px; //  position: fixed; float: none; 
@@ -131,7 +138,7 @@ body { background:@blanco;
         //  &#close_menu { float: right !important;  }
         
          &.apareciendo { display: inline !important; .scale_in; } //animation: scale_in ease-in 12s all; 
-         &.hideado { display: inline;  opacity: .5; pointer-events: none; .scale_out;   }
+         &.hideado { display: none;  opacity: .5; pointer-events: none; .scale_out;   }
           
           &:hover { opacity:1;  border: 2px solid @naranja; border-left-color: @blanco;  border-right-color: @negro; }
           span { display: none; }
@@ -146,11 +153,11 @@ body { background:@blanco;
       //    }
 
         @media @max_700 {
-          left:55px ;
+         // left:25vw ;
         }
 
         @media @celu { 
-          bottom:25px; width: 204px; 
+          bottom:30px; // width: 204px; 
           a { width:35px; height:35px; 
             &#to_before { left:70px; }
             &#to_next { left:115px; }
@@ -165,7 +172,7 @@ body { background:@blanco;
         }
 
         @media @celu-mas {  
-          min-width: 265px;
+       //   min-width: 265px;
           a:not(#close_menu) { width: 40px; height: 40px; }
           a.open_text { font-size: 1.2em; }
         //  a#open_menu {  }  //  right:2vw; 
@@ -232,16 +239,7 @@ body { background:@blanco;
        p { text-indent:0 !important; text-align: center !important;  }
     }
 
-    a { // solo para boton llamar
-      &#btn_cel { position: fixed; left:30px; bottom:30px; display: block; z-index: 3; border:none; border-radius: 0; background: url('@{img}llamar.svg'); background-size:100% 100%;  filter:invert(1);  width:60px; height:60px; }
-        @media @celu { 
-        &#btn_cel { left:10px; width:40px; height:40px; }
-      }
-        @media @celu-mas { 
-        &#btn_cel { width: 45px !important; height: 45px !important; left:15px; }
-      }
-      span { display: none; }
-    }
+
 
 
   } // footer
@@ -254,6 +252,9 @@ body { background:@blanco;
 
 header#header {
   div { position: absolute; width: 50vw; height: 20%; top:0;
+
+    @media @min_900 { height: 4vh;; }
+
     &#home_pres { left:0; width: 100vw;  z-index: 0;  //display: none;
       
       #pres-orange { background:@naranja; left:0;  }
@@ -364,8 +365,8 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
 
   section#works { display: block; // background: #FFF;
     article { position: relative; z-index: 1; border:none !important; margin-bottom: -4px; // para que no haga el separador entre clientes -- min-height: 100vh; 
-      background-size: 100% auto !important; min-width: 100vw; min-height: 100vh;
-      img { margin:0; width:100%; height: auto !important; position: relative; z-index: 0; display: inline-block; vertical-align: middle; }
+      background-size: 100% auto !important; min-width: 100vw; //min-height: 100vh;
+      img { margin:0; width:100%; height: auto !important; position: relative; z-index: 0; display: inline-block; vertical-align: middle; } // opacity:.6; filter:sepia(1); 
       a,
       video { position: absolute; // height:28%;
         &.pronto-express { right:4vw; top:6.3vw; width:40%; } //  top:4vw;
@@ -452,14 +453,27 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
       // &.carteles { background:url('@{img_trab}clientes/ss/carteles.jpg'); }
 
       &.visible { 
+      //  img {  filter:sepia(0); opacity: 1;}
          h2 { opacity: .9;}
       }
 
     } // article
   } // section#works
 
+
+
+// footer {
+//   #footer_nav {
+//     #to_top { display:none; }
+//   }
+// }
+
 } // body#body_home 
 
+.mobile {
+  #btn_cel { display: block !important; 
+    }
+}
 
 
 
@@ -469,6 +483,7 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
 
 
   body#body_servs { background: @negro; 
+    #preloader { display: none !important; }
 
     nav#sidebar { display: none !important; }
   
@@ -479,9 +494,11 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
     
       div#home_pres { left:0; width: 90vw;  z-index: 0;  //display: none;
      //   #h1-inicial { width: 100%; text-align: right; }
-        h1#h1-inicial { position: absolute; color:#4b4c45; text-align:left; height: auto; font-size:.8em; top:.8vh; left:60vw; 
-          @media @celu {
-            font-size:.8em;
+        h1#h1-inicial { position: absolute; color:#4b4c45; text-align:left; height: auto; font-size:.8em; top:.8vh; left:60vw; width: 100%;
+
+          @media @max_700 { font-size:.6em; }
+
+          @media @celu { overflow: hidden; font-size:.52em;
           }
           // @media @min_900 { 
             
@@ -497,6 +514,13 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
 
 
     aside#services { position: relative; color:#666; width:85vw; margin:8vh 0 0 5%; display:block; float: left; padding-bottom:17vw;
+      
+      h1 { font-size:13vw; color:@blanco; position: fixed; left:-1vw; top:-5vh; opacity: .5;
+        @media @max_1300 { top:-8vh; }
+        @media @celu {  top:-3vh;}
+        @media @min_1600 { top:-9vh;}
+        &.relative { opacity: 1; color:@negro; position: relative; font-size: 4vw; }
+      }
       // colores:
       .col_1 {  color:#6c6c53; } //desaturate(yellow, 90%); 
       .col_1_2 {color:#96967a;  }
@@ -532,24 +556,56 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
         @media @tablet {
           p { font-size:2.2vw; }
         }
-        ul { 
-          li { position: fixed; bottom:10px;  width: 9vw; height:9vw; z-index: 4;
+        
+        ul { float:left; position:fixed; bottom:30px; left:10vw; width: auto; height:5vh;
+          li { float:left; width: 9vw; height:9vw; z-index: 4; // bottom:10px;  
             a { display: block; width: 80%; height: 80%;
               span { display: none;}
               &:hover {  opacity: .8 }
+            }          
+            
+            //  & a:hover {  }
+            
+            &#facebook { //left:24.5vw; display: none; 
+              a { background: url('@{img}facebook.svg') no-repeat; background-size:100%; }
             }
-            &.link { left:14vw;  }
-            // no deberia ir aca
-            &.face { left:24.5vw; display: none; }
-              &.link a { background: url('@{img}linkedin.svg') no-repeat; background-size:100%; }
-              &.face a { background: url('@{img}facebook.svg') no-repeat; background-size:100%; }
-          //  & a:hover {  }
+            &#linkedin { //left:14vw;  
+              a { background: url('@{img}linkedin.svg') no-repeat; background-size:100%; }
+            }
+            
+            &#btn_cel,
+            &#whatsapp { z-index: 3; border:none; border-radius: 50px; }  //  display: block; background-size:100% 100%;  position: fixed; left:30px; bottom:30px;  //   width:60px; height:60px;
+
+            &#btn_cel { display: none;
+              a {  background: url('@{img}llamar.svg'); background-size:100% 100%;   } 
+            }
+            &#whatsapp {
+              a {  background: url('@{img}whatsapp.svg'); background-size:100% 100%;  } 
+            }
+
+              //   @media @celu { 
+              //   &#btn_cel { left:10px; width:40px; height:40px; }
+              // }
+              //   @media @celu-mas { 
+              //   &#btn_cel { width: 45px !important; height: 45px !important; left:15px; }
+              // }
+              // span { display: none; }
+            // }
+
+
+
+
           } // li
           @media @min_700 { 
-            li { bottom:0.9vh; width: 4vw; height:4vw; 
-              a { width: 80%; height: 80%; }
-              &.link { left:9.5vw;  }
-              &.face { left:14vw;}
+            li { bottom:0.9vh; width: 4vw; height:4vw;
+
+
+              &#linkedin { left:9.5vw;  }
+              &#facebook { left:14vw;}
+          
+
+              a { width: 80%; height: 80%; 
+              }  
             }
           }
         } // ul
@@ -559,7 +615,7 @@ body#body_home { width: 100%; height: 100%; overflow:hidden; background:@blanco;
         @media @min_700 { width: 14vw; }
         @media @max_700 { right: 9vw; }
         div#links { display: block;
-          h1 { display: none; }
+
           ul { display: block; margin:0;
             li { font-size: 1.2vw; 
               span  { float: left; clear: both; margin:4vh 0 1vh; width: 100%; color:#2d3333; font-size:4vw; line-height:.9em; font-weight: bold;
@@ -789,10 +845,12 @@ body#body_servs { scroll-behavior: smooth;
     nav#footer_nav { list-style:none;
       a {
         &#close_menu,
-    //    &#to_next,
+        &#to_next,
         &#to_before,
         &#to_home,
         &#open_menu { display: none; }
+          
+        &#to_top { display: block; background: url('@{img}to_before.svg') no-repeat center bottom / 100% auto; float: left; }
       
         &#link_clientes { font-size:0;  display: inline !important; }
       }    

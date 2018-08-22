@@ -106,7 +106,7 @@ window.serv_vid = "Videos; publicidades";
 window.serv_impr = "Impresos: folletos; <span>gigantografías; banners:</span>";
 window.serv_folletos = "Folletos varios";
 window.ademas = "Además";
-window.serv_regist = "Registro de dominios; alojamiento (hosting) de sitios web";
+window.serv_regist = "Registro de dominios; alojamiento (hosting) web";
 window.serv_gestion = "Gestión de trabajos de impresión";
 window.contact_text = "Contacto con Guillermo Luy";
 window.contact_call = "Llamar a Guillermo Luy";
@@ -114,6 +114,8 @@ window.tel = "Tel";
 
 window.ir_anterior = "anterior";
 window.ir_siguiente = "siguiente";
+window.subir = "subir";
+
 window.ir_home = "volver a inicio";
 
 window.link_dis_3d =  "<a href='javascript:' class='link_3d col_3'>Modelador y animador 3d</a>";
@@ -127,7 +129,7 @@ window.link_todos =  "<a href='javascript:' class='link_todos col_2'>Diseño Gr�
 window.link_manuales =  "<a href='http://www.bounousmaquinarias.com/pdf/VB-100-HIDRO-HVP_manual_de_uso.pdf' class='link-bounous-manual col_1' target='_blank'>manuales de productos</a>";
 
 window.link_web_simple = "<a href='http://bounousmaquinarias.com' class='col_5' target='_blank'>contenido fijo</a>";
-window.link_web_blog = "<a href='http://rinconrh.com.ar' target='_blank' class='col_1'>blogs</a>";
+//window.link_web_blog = "<a href='http://rinconrh.com.ar' target='_blank' class='col_1'>blogs</a>";
 window.link_web_catalogos = "<a href='http://minfraestructura.com.ar' class='col_5' target='_blank'>catálogos de productos</a>";
 window.link_tiendas = "<a href='https://thedarksideseeds.com' target='_blank' class='col_3'>tiendas virtuales</a>";
 window.link_web_redes = "<a class='link_red col_2' href='javascript:'>redes sociales</a>";
@@ -141,11 +143,11 @@ window.link_marcas = "<a href='"+img_trab_url+"me/marcas.jpg' class='link-marcas
 window.link_carteles = "<a href='"+img_trab_url+"me/carteles.jpg' class='link-carteles col_4'>carteles, gigantografías, banners</a>"; // data-fancybox data-type='image' 
 window.link_folletos = "<a href='"+img_trab_url+"me/folletos.jpg' class='link-folletos col_4'>folletos</a>"; //  data-fancybox data-type='image'
 
-window.cv_texto_init_1 = "Hola, mi nombre es Guillermo Luy, soy un diseñador gráfico que con el tiempo adquirí experiencia en el campo de la programación, siendo un enlace entre ellos "+link_dis_web+" y especialmente maquetado html, un trabajo no muy nombrado que se realiza entre el diseño y la programación de un "+link_sitio_web+" "+fancy_view_source+" se ve en tu computadora presionando "+view_source+".";
+window.cv_texto_init_1 = "Hola, mi nombre es Guillermo Luy, soy diseñador gráfico y desarrollador web y de webapps (react.js, vue.js), especialiciándome en html, css3 y javascript para maquetado web y mejorar la experiencia del usuario en cada uno de estos trabajos realizados.";
 window.cv_texto_init_2 = "En "+link_todos+" comencé en el año 2003, con trabajos de índole editorial y urbano ("+link_marcas+", "+link_manuales+", "+link_carteles+", "+link_folletos+", "+link_impr+").";
 window.cv_texto_init_3 = "En el año 2005 comencé a trabajar en "+link_dis_web+", creando interfaces y especializándome en maquetación web.";
-window.cv_texto_init_4 = "A partir de 2008 fui adquiriendo conocimientos variados, desempeñándome como "+link_dis_3d+" He realizado stands para exposiciones, prototipos, automóviles, animaciones varias, y aprovechando este poderoso motor he realizado también logotipos, diseños de plantillas web y "+link_sitios_web+" como también imágenes especiales para trabajos "+link_impr+" Durante este período hasta 2015, he trabajado para clientes y empresas de nivel local e internacional, formando parte también como socio en diversas empresas dedicadas a "+link_todos+" y "+link_dis_web;
-window.cv_texto_init_5 = "Con el paso del tiempo fui desarrollándome en todas éstas áreas, dominando y aplicando más conocimientos en programación y diseño, permitiéndome realizar "+link_sitios_web+" de "+link_web_simple+" como también portales de noticias, "+link_web_blog+", "+link_web_catalogos+" y "+link_tiendas+"."
+window.cv_texto_init_4 = "A partir de 2008 fui adquiriendo conocimientos variados, desempeñándome como "+link_dis_3d+". He realizado stands para exposiciones, prototipos, automóviles, animaciones varias, y aprovechando este poderoso motor he realizado también logotipos, diseños de plantillas web y "+link_sitios_web+" como también imágenes especiales para trabajos "+link_impr+" Durante este período hasta 2015, he trabajado para clientes y empresas de nivel local e internacional, formando parte también como socio en diversas empresas dedicadas a "+link_todos+" y "+link_dis_web;
+window.cv_texto_init_5 = "Con el paso del tiempo fui desarrollándome en todas éstas áreas, dominando y aplicando más conocimientos en programación y diseño, permitiéndome realizar "+link_sitios_web+" de "+link_web_simple+" como también portales de noticias, blogs, "+link_web_catalogos+" y "+link_tiendas+"."
 window.cv_texto_init_6 = "Actualmente estoy trabajando en "+link_sitios_web+", desde el diseño a la programación, como así también administrando "+link_web_redes+", generando contenidos como  "+link_videos+" e imágenes, banners publicitarios para portales de noticias (Google Ads) y distintos trabajos de impresión en general: tarjetería, banners, rotulados, menúes, etc.";
 window.cv_texto_init_7 = "Mi currículum completo se encuentra en <a class='link_3d col_3' href='"+url_linkedin+" target='_blank'>Linkedin</a> donde detallo mejor cada experiencia y los conocimientos que fui adquiriendo a lo largo de los años.";
 window.cv_texto_init_8 = "El ícono del maletín a la derecha, te lleva a un resumen de todos mis trabajos a través del tiempo.";

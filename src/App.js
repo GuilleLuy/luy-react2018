@@ -1,15 +1,15 @@
 // Dependences
 import React, { Component } from 'react';
+import {Circle2} from "react-preloaders";
+import { isMobile } from "react-device-detect";
 
 import "./less/_import_diseno.less";
-// import propTypes from 'prop-types';
 
 // Vars Globales
  import './data/vars';
 
 // Idioma
  import './data/es';
-
 
 // Components
 
@@ -31,6 +31,14 @@ class App extends Component {
     btn_servicios.classList.remove('quieto');
     btn_clientes.classList.remove('scroll');
 
+    if (isMobile) {
+      // return <div> This content is unavailable on mobile</div>
+     
+      the_body.classList.add('mobile');
+    } else {
+      the_body.classList.add('no_mobile');
+    }
+
       // window.scrollTo(0, 0);
       // window.location.href.split('#')[0];
     // window.history.replaceState({}, document.title, "/");
@@ -42,11 +50,32 @@ class App extends Component {
   render() {
     const { children } = this.props;
     return (
+
+ 
+
       <div className="App">
         <Header items={ items } />
+
+
+            <React.Fragment>
+            <Circle2
+             //Default #2D2D2D
+              bgColor={"#1e1e1e"} //Default #F7F7F7
+              time={1400} //Default #1300
+            />
+
+
           <Content body={children} />
+
+
+                </React.Fragment>
+
+
         <Footer />
       </div>
+
+
+
     );
   }
 }

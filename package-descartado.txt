@@ -1,0 +1,3 @@
+  "dependencies": {
+    "react-on-screen": "^2.0.4",
+    "react-preloaders": "^2.1.3",

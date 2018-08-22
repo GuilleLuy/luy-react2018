@@ -1,8 +1,5 @@
 
 
-////////////// VER
-////////////// http://www.hackingwithreact.com/read/1/13/rendering-an-array-of-data-with-map-and-jsx
-
 // Dependences
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
@@ -21,15 +18,6 @@ class Header extends Component {
     this.state = {
       puntoClick : false
     }
-  }
-
-  
-  componentDidMount() { // variables globales siempre aca
-//    global.btn_clientes = document.getElementById('btn_clientes');
-//    global.btn_servicios = document.getElementById('btn_servicios');
-  //  global.btn_trabajos = document.getElementById('btn_trabajos');
-    //global.home_pres = document.getElementById('home_pres');
-    // global.punto_inicio = document.getElementById('punto_inicio');
   }
 
   componentWillMount(){

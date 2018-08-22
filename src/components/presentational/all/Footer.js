@@ -7,6 +7,10 @@ class Footer extends Component {
 
   constructor(props) { 
     super(props); 
+    this.state = {
+      intervalId: 0
+    }
+
     this.clickFlechas = this.clickFlechas.bind(this);
   }
 
@@ -16,6 +20,10 @@ class Footer extends Component {
         // FALTA EL MENU DE ARRIBA! mails, idiomas, skype, messenger. Ver si redirigen a welcome y servicios o si haay otro modo mejor
         
         // ver que mas hacer aca y una vez listo ver que mas queda: page404, mails, idiomas, skype, messenger y listo todo.
+
+        // Para que vaya al top en servicios hacer un ref o algo solo en servicios como el puntoclick capaz
+
+        // HACER UNa DIST Y PROBARLA EN LUY
 
 
 
@@ -54,6 +62,18 @@ class Footer extends Component {
   }
 
 
+
+    scrollStep() {
+        if (window.pageYOffset === 0) {
+            clearInterval(this.state.intervalId);
+        }
+        window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
+      }
+      
+      scrollToTop() {
+        let intervalId = setInterval(this.scrollStep.bind(this), this.props.delayInMs);
+        this.setState({ intervalId: intervalId });
+      }
  
   clickFlechas(){
     window.history.pushState({}, document.title, "/" + "");
@@ -65,12 +85,12 @@ class Footer extends Component {
     return (
       <footer id="footer">
         <nav id="footer_nav" history={browserHistory}>
-          <a id="close_menu"></a>
+          {/* <a id="close_menu"></a> */}
+          <a id='to_top' className='scroll' title={subir} onClick={() => this.scrollToTop(this)} ><span>{subir}</span></a>
           <a id="to_next" title={ ir_siguiente } onClick={() => this.clickFlechas(this)} onMouseOver={() => this.overFheclas()}><span>{ ir_siguiente }</span></a>
           <a id="to_home" title={ ir_home }><span>{ ir_home }</span></a>          
           <a id="to_before" title={ ir_anterior } onClick={() => this.clickFlechas(this)} onMouseOver={() => this.overFheclas()}><span>{ ir_anterior }</span></a>
-          <a id="open_menu"></a>
-          <a href="tel:543425033958" id="btn_cel" title={contact_call}><span>{ contact_call }</span></a>
+          {/* <a id="open_menu"></a> */}
         </nav>
         <p dangerouslySetInnerHTML={{__html: copyright }} />
       </footer>
